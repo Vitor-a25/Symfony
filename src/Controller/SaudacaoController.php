@@ -6,9 +6,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use DateTime;
 
-class OlaMundoController extends AbstractController
+class SaudacaoController extends AbstractController
 {
-    /**
+    /** 
      * Rota para /ola (sem nome) - exibe mensagem genérica
      */
     #[Route('/ola', name: 'saudacao_padrao')]
