@@ -5,6 +5,15 @@
     "description": "A minimal Symfony project recommended to create bare bones applications",
     "minimum-stability": "stable",
     "prefer-stable": true,
+    "config": {
+        "audit": {
+            "block-insecure": false
+        },
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        }
+    },
     "require": {
         "php": ">=8.1",
         "ext-ctype": "*",
@@ -14,11 +23,10 @@
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.3.*",
         "symfony/runtime": "6.3.*",
-        "symfony/yaml": "6.3.*"
+        "symfony/yaml": "6.3.*",
+        "sensio/framework-extra-bundle": "^6.2"
     },
-    "require-dev": {
-    },
-    "config": {
+    "": {
         "allow-plugins": {
             "php-http/discovery": true,
             "symfony/flex": true,
@@ -46,8 +54,10 @@
         "symfony/polyfill-php81": "*"
     },
     "scripts": {
-        "auto-scripts": [
-        ],
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
         "post-install-cmd": [
             "@auto-scripts"
         ],
